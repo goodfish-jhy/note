@@ -1,0 +1,157 @@
+site_name: My Docs
+site_name: GoodFish的笔记本
+site_url: https://note.goodfish.site/
+site_author: GoodFish
+copyright: Copyright &copy; 2016 - 2025 GoodFish
+
+
+# Configuration
+theme:
+  favicon: /assets/image/logo.jpeg
+  icon: 
+    logo: material/notebook-outline
+  name: material
+  language: zh
+
+  palette:
+     # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/theme-light-dark
+        name: 切换到亮色模式
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: light_mode
+      accent: light_mode
+      primary: light_mode
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到暗色模式
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: dark_mode
+      primary: dark_mode
+      toggle:
+        icon: material/weather-night
+        name: 切换到跟随系统设置
+
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - header.autohide
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extensions
+
+
+
+nav:
+  - Home:
+    - index.md
+  - OI:
+    - OI/index.md
+    - Solutions:
+      - "P13321 [GCJ 2012 #1C] Diamond Inheritance": OI/Solutions/P13321.md
+    - Algorithms:
+      - "并查集": OI/Algorithms/并查集.md
+      - "矩阵乘法": OI/Algorithms/矩阵乘法.md
+      - "矩阵加速递推": OI/Algorithms/矩阵加速递推.md
+  - CTF:
+    - CTF/index.md
+    - Problems & Solutions:
+      - Problems:
+        - "小G的照片": CTF/Problems/小G的照片.md
+        - "神秘的游戏卡带": CTF/Problems/神秘的游戏卡带.md
+      - Solutions:
+        - "小G的照片-Solution": CTF/Solutions/小G的照片-Solution.md
+        - "神秘的游戏卡带-Solution": CTF/Solutions/神秘的游戏卡带-Solution.md
+    - Misc:
+      - "隐写":
+        - "图像隐写": CTF/Misc/图像隐写.md
+        - "音频隐写": CTF/Misc/音频隐写.md
+  - IPhO:
+    - "数学基础":
+      - "弧度制": IPhO/弧度制.md
+      - "三角函数": IPhO/三角函数.md
+      - "向量": IPhO/向量.md
+    - "力学":
+      - "重力": IPhO/重力.md
+      - "弹力": IPhO/弹力.md
+      - "摩擦力": IPhO/摩擦力.md
+      - "力的合成与分解": IPhO/力的合成与分解.md
+      - "力的平衡": IPhO/力的平衡.md
+      - "牛顿三大定律": IPhO/牛顿三大定律.md
+
+extra_css:
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.5.0/style.css
+  - assets/katex/dist/katex.min.css
+  - assets/stylesheets/extra.css
+  - assets/front/style.css
+
+extra_javascript:
+  - assets/katex/dist/katex.min.js
+  - assets/katex/dist/contrib/auto-render.min.js
+  - assets/katex-autorender-init.js
