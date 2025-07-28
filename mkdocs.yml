@@ -3,6 +3,7 @@ site_name: GoodFish的笔记本
 site_url: https://note.goodfish.site/
 site_author: GoodFish
 repo_name: goodfish-jhy/note
+edit_uri: tree/master/docs
 repo_url: https://github.com/goodfish-jhy/note/
 copyright: Copyright &copy; 2016 - 2025 GoodFish
 
