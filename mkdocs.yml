@@ -1,4 +1,3 @@
-site_name: My Docs
 site_name: GoodFish的笔记本
 site_url: https://note.goodfish.site/
 site_author: GoodFish
@@ -41,6 +40,7 @@ theme:
         name: 切换到跟随系统设置
 
   features:
+    - navigation.expand
     - announce.dismiss
     - content.action.edit
     - content.action.view
@@ -66,6 +66,11 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - meta  # 元数据处理
+  # - sane_lists  # 智能列表处理
+  - pymdownx.critic  # 批注语法支持
+  - pymdownx.superfences:
+      preserve_tabs: true  # 保留代码块中的制表符
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -109,8 +114,9 @@ plugins:
   - search  # 内置搜索插件
   
   - git-revision-date-localized:  # 显示最后修改时间
-      type: "timeago"  # 显示为"3天前"格式
+      type: "datetime"
       timezone: "Asia/Shanghai"  # 时区设置
+      enable_creation_date: true # 显示修改和创建时间
   
   - minify:  # 压缩HTML输出
       minify_html: true

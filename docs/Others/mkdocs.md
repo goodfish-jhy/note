@@ -216,3 +216,5 @@ strict: true  # 严格模式（警告视为错误）
 use_directory_urls: true  # 使用目录式URL（如/page/而非/page.html）
 watch: ["docs", "config.yml"]  # 开发服务器监听的文件变化
 ```
+
+除此之外
