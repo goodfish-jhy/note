@@ -3,7 +3,6 @@ site_name: GoodFish的笔记本
 site_url: https://note.goodfish.site/
 site_author: GoodFish
 repo_name: goodfish-jhy/note
-edit_uri: tree/master/docs
 repo_url: https://github.com/goodfish-jhy/note/
 copyright: Copyright &copy; 2016 - 2025 GoodFish
 
@@ -106,7 +105,17 @@ markdown_extensions:
 
 # Extensions
 
-
+plugins:
+  - search  # 内置搜索插件
+  
+  - git-revision-date-localized:  # 显示最后修改时间
+      type: "timeago"  # 显示为"3天前"格式
+      timezone: "Asia/Shanghai"  # 时区设置
+  
+  - minify:  # 压缩HTML输出
+      minify_html: true
+      minify_js: true
+      minify_css: true
 
 nav:
   - Home:
@@ -144,6 +153,9 @@ nav:
       - "力的合成与分解": IPhO/力的合成与分解.md
       - "力的平衡": IPhO/力的平衡.md
       - "牛顿三大定律": IPhO/牛顿三大定律.md
+  - Others:
+    - "教程": 
+      - "MkDocs搭建个人笔记本": Others/mkdocs.md
 
 extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
