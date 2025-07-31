@@ -178,4 +178,5 @@ extra_javascript:
   - assets/katex-autorender-init.js
 
 extra:
-  cname: note.goodfish.site
+  include:
+    - CNAME
