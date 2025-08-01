@@ -176,3 +176,9 @@ extra_javascript:
   - assets/katex/dist/katex.min.js
   - assets/katex/dist/contrib/auto-render.min.js
   - assets/katex-autorender-init.js
+
+extra:
+  social:
+    - icon: "fontawesome/brands/github"
+      link: "https://github.com/goodfish-jhy"
+      name: "GitHub"
