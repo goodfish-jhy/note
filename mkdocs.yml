@@ -122,6 +122,12 @@ plugins:
       minify_html: true
       minify_js: true
       minify_css: true
+  
+  - rss: # RSS订阅支持
+      match_path: /*
+      categories:
+        - categories
+        - tags
 
 nav:
   - Home:
@@ -179,6 +185,8 @@ extra_javascript:
 
 extra:
   social:
+    - icon: fontawesome/solid/rss
+      link: https://blog.tonycrane.cc/
     - icon: "fontawesome/brands/github"
       link: "https://github.com/goodfish-jhy"
       name: "GitHub"
