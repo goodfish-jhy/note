@@ -1,0 +1,81 @@
+[data-md-color-primary=light_mode] {
+  --md-primary-fg-color: #efefef;
+  --md-primary-bg-color: #1f1f1f;
+  --md-typeset-a-color: #555555;
+  --md-primary-bg-color--light: #ededed;
+  --md-mermaid-label-bg-color: #ffffff;
+  --md-footer-bg-color--dark: #efefef;
+  --md-footer-fg-color--light: #000000;
+  --md-footer-fg-color--lighter: #000000;
+  --md-footer-bg-color: #efefef;
+  --md-footer-fg-color: #000000;
+    /*background-color: #efefef;*/
+}
+
+[data-md-color-primary=dark_mode] {
+  --md-primary-fg-color: #0d0d0d;
+  --md-primary-bg-color: #ffffff;
+  --md-default-bg-color: #161616;/**/
+  --md-typeset-a-color: #BB86FC;
+  --md-default-fg-color--lighter: #dcdcdc59;
+  --md-default-fg-color--light: #e4e4e4;
+  --md-primary-bg-color--light: #e4e4e4;
+  --md-default-fg-color: #e4e4e4;
+  --md-typeset-color: #e8e8e8;
+  --md-footer-bg-color--dark: #0d0d0d;
+  --md-code-bg-color: #0d0d0d;
+  --md-footer-fg-color--light: #ffffff;
+  --md-footer-fg-color--lighter: #ffffff;
+  --md-footer-bg-color: #0d0d0d;
+  --md-footer-fg-color: #ffffff;
+  --md-code-fg-color: #dddddd;
+  background-color: #161616;
+  /*background-color: #efefef;*/
+}
+
+
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 700;
+}
+
+.md-tabs__link {
+    font-weight: 700;
+}
+
+/* 加粗顶部标题文字 */
+.md-header__title {
+  font-weight: 700;  /* 使顶部标题文字更粗 */
+}
+
+/* 如果你也想加粗导航栏文字，可以这样做 */
+.md-header-nav__link {
+  font-weight: 700;  /* 使导航栏链接文字更粗 */
+}
+
+
+/* 加粗侧边栏目录链接文字 */
+.md-nav__link {
+  font-weight: 700;  /* 使侧边栏链接文字更粗 */
+}
+
+/* 加粗侧边栏标题 */
+.md-nav__title {
+  font-weight: 700;  /* 使侧边栏的标题文字更粗 */
+}
+
+
+body {
+      /*font-family: "LXGW WenKai", sans-serif;*/
+      /* Lite version */
+      /* font-family: "LXGW WenKai Lite", sans-serif; */
+      /* TC version */
+      /* font-family: "LXGW WenKai TC", sans-serif; */
+      /* Screen version */
+      font-family: "LXGW WenKai Screen", sans-serif;
+    }
