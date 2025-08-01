@@ -83,7 +83,7 @@ mkdocs serve
 
 ## 3.MkDocs配置
 
-这边提供一份MkDocs配置文件的参考，其包含部分参考内容，请根据实际需要配置
+这边提供一份MkDocs配置文件的参考，读者可了解各配置项的功能
 
 ```yaml
 # ====================== 基础配置 ======================
@@ -217,4 +217,67 @@ use_directory_urls: true  # 使用目录式URL（如/page/而非/page.html）
 watch: ["docs", "config.yml"]  # 开发服务器监听的文件变化
 ```
 
-除此之外
+需要注意的是，如果需要在配置文件当中引用本地文件，是以`docs`文件夹为根目录表示，例如：
+
+ - `\test\docs\assets\xxx.js` 应为 `assets\xxx.js`
+
+对于 [Material Design Icons](https://pictogrammers.com/library/mdi/) 内的图标，可以使用 `material\xxxx` 的方式嵌入。
+
+如果读者需要亮暗色切换，可以参考：
+
+```yaml
+theme:
+  palette:
+     # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/theme-light-dark
+        name: 切换到亮色模式
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: light_mode
+      accent: light_mode
+      primary: light_mode
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到暗色模式
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: dark_mode
+      primary: dark_mode
+      toggle:
+        icon: material/weather-night
+        name: 切换到跟随系统设置
+```
+
+??? Warning "注意"
+    这里的 `light_mode` 和 `dark_mode` 是笔者自定义的样式，不能直接使用，具体配置参考笔者github仓库中 `\docs\assets\stylesheets\extra.css`文件。
+
+## 4.MkDocs 部署
+
+到这一步，读者应确保修改后的配置文件不存在错误，即在本地运行 `mkdcos serve` 可以正常预览效果。
+
+对于MkDocs部署，可以选择部署在个人服务器或Github Page，下面将分别介绍。
+
+### 4.1 部署到服务器
+
+接下来，本文将详细阐述通过Docker容器进行应用部署的具体流程。在开始之前，需要准备一台可正常连接的服务器（关于云服务器的选购不在本文讨论范围内）。
+
+宝塔面板的安装
+通过执行以下命令即可完成宝塔面板的一键安装。该命令会自动检测系统环境并选择最合适的下载方式：
+
+```bash
+if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec
+```
+安装完成后，登录宝塔面板并在左侧功能菜单中找到Docker选项。首次使用时系统会提示安装Docker服务，只需按照提示完成安装即可。
+
+在Docker管理界面中搜索并安装Material for MkDocs镜像，安装完成后将本地项目文件完整上传至服务器指定目录即可完成部署。
+
+关于域名配置和SSL证书等后续设置，都可以通过宝塔面板提供的可视化界面便捷地完成配置。
+
+### 4.2 部署到Github Page
+
+要部署到Github Page，
