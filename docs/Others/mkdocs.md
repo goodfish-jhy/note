@@ -85,7 +85,7 @@ mkdocs serve
 
 这边提供一份MkDocs配置文件的参考，读者可了解各配置项的功能
 
-```yaml
+```yaml title="mkdocs.yml"
 # ====================== 基础配置 ======================
 site_name: "My Docs"  # 【必填】文档主标题名称，显示在左上角和浏览器标签页
 site_url: "https://example.com"  # 最终的网站URL，用于生成绝对链接和sitemap
@@ -315,7 +315,7 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 
 创建 `.github/workflows/ci.yml` 内容如下：
 
-```yaml hl_lines="28"
+```yaml hl_lines="28" title="ci.yml"
 name: ci 
 on:
   push:
@@ -347,3 +347,4 @@ jobs:
       - run: mkdocs gh-deploy --force
 ```
 
+需要将高亮的行中的依赖进行修改，修改为读者实际的环境依赖。
