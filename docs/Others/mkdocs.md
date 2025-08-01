@@ -315,7 +315,7 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 
 创建 `.github/workflows/ci.yml` 内容如下：
 
-```yaml
+```yaml hl_lines="28"
 name: ci 
 on:
   push:
@@ -346,3 +346,4 @@ jobs:
       - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin
       - run: mkdocs gh-deploy --force
 ```
+
