@@ -176,7 +176,3 @@ extra_javascript:
   - assets/katex/dist/katex.min.js
   - assets/katex/dist/contrib/auto-render.min.js
   - assets/katex-autorender-init.js
-
-extra:
-  include:
-    - CNAME
