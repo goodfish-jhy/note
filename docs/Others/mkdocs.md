@@ -280,4 +280,33 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 
 ### 4.2 部署到Github Page
 
-要部署到Github Page，
+要部署到 Github Pages，只需在本地运行 `mkdocs gh-deploy` 命令即可自动将生成的静态网站部署到你的 GitHub 仓库的 `gh-pages` 分支，并通过 GitHub Pages 服务进行托管。
+
+但在此之前，请确保已完成以下准备工作：
+
+1. **初始化 Git 仓库**  
+  在项目根目录下运行：
+  ```bash
+  git init
+  git remote add origin https://github.com/你的用户名/你的仓库名.git
+  ```
+  并将本地代码推送到 GitHub：
+  ```bash
+  git add .
+  git commit -m "init mkdocs site"
+  git push -u origin master
+  ```
+
+2. **配置 GitHub Pages**  
+  在 GitHub 仓库的设置（Settings）页面，找到 Pages 部分，选择 `gh-pages` 分支作为发布源。
+
+3. **部署到 GitHub Pages**  
+  运行：
+  ```bash
+  mkdocs gh-deploy
+  ```
+  该命令会自动构建并推送 `site` 目录内容到 `gh-pages` 分支。
+
+部署完成后，你可以通过 `https://你的用户名.github.io/你的仓库名/` 访问你的 MkDocs 网站。
+
+如需自定义域名，可在`docs`目录下添加 `CNAME` 文件并填写入域名，并在 GitHub Pages 设置中填写你的域名。
