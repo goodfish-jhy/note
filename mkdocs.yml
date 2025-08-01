@@ -185,8 +185,9 @@ extra_javascript:
 
 extra:
   social:
-    - icon: fontawesome/solid/rss
-      link: https://blog.tonycrane.cc/
+    - icon: "fontawesome/solid/rss"
+      link: "https://note.goodfish.site/feed_rss_created.xml"
+      name: "RSS"
     - icon: "fontawesome/brands/github"
       link: "https://github.com/goodfish-jhy"
       name: "GitHub"
