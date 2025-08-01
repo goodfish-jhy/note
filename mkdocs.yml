@@ -140,6 +140,7 @@ nav:
       - "并查集": OI/Algorithms/并查集.md
       - "矩阵乘法": OI/Algorithms/矩阵乘法.md
       - "矩阵加速递推": OI/Algorithms/矩阵加速递推.md
+      - "分数规划": OI/Algorithms/分数规划.md
   - CTF:
     - CTF/index.md
     - Problems & Solutions:
