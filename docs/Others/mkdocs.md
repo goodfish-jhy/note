@@ -310,3 +310,39 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 部署完成后，你可以通过 `https://你的用户名.github.io/你的仓库名/` 访问你的 MkDocs 网站。
 
 如需自定义域名，可在`docs`目录下添加 `CNAME` 文件并填写入域名，并在 GitHub Pages 设置中填写你的域名。
+
+同时，还可以通过`GitHub Action`来实现在`git push`时自动推送到 `gh-pages`。
+
+创建 `.github/workflows/ci.yml` 内容如下：
+
+```yaml
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin
+      - run: mkdocs gh-deploy --force
+```
