@@ -193,4 +193,5 @@ extra:
       link: "https://github.com/goodfish-jhy"
       name: "GitHub"
 
-use_directory_urls: true
+use_directory_urls: true                   # 核心设置（默认开启）
+strict: true                                # 强制检查错误链接
