@@ -26,10 +26,6 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin mkdocs-rss-plugin
-      - name: Debug
-        run: |
-          mkdocs --version
-          cat mkdocs.yml
-          mkdocs build --verbose
-      
+      - run : mkdocs build
+      - run: tree site
       - run: mkdocs gh-deploy
