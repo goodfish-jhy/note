@@ -192,3 +192,5 @@ extra:
     - icon: "fontawesome/brands/github"
       link: "https://github.com/goodfish-jhy"
       name: "GitHub"
+
+use_directory_urls: true
