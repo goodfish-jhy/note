@@ -26,6 +26,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin mkdocs-rss-plugin
-      - run : mkdocs build
-      - run: tree site
-      - run: mkdocs gh-deploy
+      - run: mkdocs gh-deploy --force --config-file /mkdocs.yml --remote-branch gh-pages --remote-name origin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI: true
