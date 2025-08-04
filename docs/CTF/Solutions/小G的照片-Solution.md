@@ -35,7 +35,7 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 
 果然，打开频谱图发现了一个网址
 
-![Image](https://note.goodfish.site/assets/image/Solutions/小G的照片-Solution/2025_02_13_21_37.png){ loading=lazy }
+![Image](../../assets/image/Solutions/小G的照片-Solution/2025_02_13_21_37.png){ loading=lazy }
 
 下载下来放沙盘跑了下，发现要输入密码
 
@@ -49,7 +49,7 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 
 加载调试器后，发现调试器被Ban了
 
-![Image](https://note.goodfish.site/assets/image/Solutions/小G的照片-Solution/2025_02_13_22_15.png){ loading=lazy }
+![Image](../../assets/image/Solutions/小G的照片-Solution/2025_02_13_22_15.png){ loading=lazy }
 
 程序在正常情况下无法正常运行
 
@@ -61,7 +61,7 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 
 这个时候从工具栏可以搜索字符串`Wrong answer`
 
-![Image](https://note.goodfish.site/assets/image/Solutions/小G的照片-Solution/2025_02_13_22_33.png){ loading=lazy }
+![Image](../../assets/image/Solutions/小G的照片-Solution/2025_02_13_22_33.png){ loading=lazy }
 
 双击搜索到的跳转到汇编代码
 
@@ -72,9 +72,9 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 ??? success
     ```hex
     00007FF72C524060  4E 4A 46 44 4D 53 4A 44 46 53 4D 4A 4D 47 45 52  NJFDMSJDFSMJMGER  
-    00007FF72C524070  44 46 4D 55 44 53 4D 55 44 46 43 00 57 72 6F 6E  DFMUDSMUDFC.Wron 
+    00007FF72C524070  44 46 4D 55 44 53 4D 55 44 46 43 00 57 72 6F 6E  DFMUDSMUDFC.Wron
     ```
-    
+
     其中`NJFDMSJDFSMJMGERDFMUDSMUDFC`便是密码
 
 输入后可以得到flg
@@ -82,4 +82,4 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 ??? success
     flg是`flg{unc0nfused c0de 1s fr4g1le}`
 
-至于为什么不直接搜索`flg`，这是因为flg经过了加密，无法直接搜索出来
+至于为什么不直接搜索`flg`，这是因为flg经过了加密，无法直接搜索出来。

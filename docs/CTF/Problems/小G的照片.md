@@ -1,11 +1,16 @@
 # 小G的照片
-<img src="https://img.shields.io/badge/-LSB-informational?style=flat-square"/>
-<img src="https://img.shields.io/badge/-频谱图-blueviolet?style=flat-square"/>
-<img src="https://img.shields.io/badge/-WindowsDebug-orange?style=flat-square"/>
+
+![LSB Badge](https://img.shields.io/badge/-LSB-informational?style=flat-square)
+![频谱图](https://img.shields.io/badge/-频谱图-blueviolet?style=flat-square)
+![Windows Debug](https://img.shields.io/badge/-WindowsDebug-orange?style=flat-square)
 
 ## 题目背景
 
-我重生了，重生在被人吊打的前一天。上一世，我因CTF题目出的太简单，被人吊起来打，答案半小时就爆在讨论组。我的名誉一落千丈，但这一次，我不再犯同样的错误。我要出一道无人能够做出来的究极套娃题，夺回属于我的一切。我已经做好了准备，这一次，再也没有人敢小看我。
+我一进群，所有打CTF的便都看着我笑，有的叫道：“出题人，你题目又被秒破了！”我不回答，默默上传了题目包，只写了一句：“flag在哪儿？自己找。”
+
+他们又故意高声嚷道：“你肯定又出送分题了！”我睁大眼睛说：“你怎么这样凭空污人题目……”“什么题目？上次你出的‘Hello World’加密，三行代码就搞定，被人喷了三百楼。”
+
+我便涨红了脸，额上的青筋条条绽出，争辩道：“代码短不能算送分……防AK的事，能算简单么？”接连便是难懂的话，什么“多层套娃”，什么“非预期解”之类，引得众人都哄笑起来：群内外充满了快活的空气。
 
 ## 题面
 
@@ -16,17 +21,9 @@
 小A又翻了翻信封，发现了一封信:
 
 > 亲爱的小A，
-
 > 你好！寒假过得怎么样？我刚从旅行中回来，带回了一些有趣的照片，特意选了几张寄给你。相信你会喜欢的。其实，除了这些照片，我还在照片里藏了一些小秘密。你看到了照片右下角的“LSB”了吗？这不是随便写的字母哦，而是一个暗示。
-
 > 虽然你不是计算机高手，但我知道你很聪明，所以我特地留下了线索。照片背后有一段信息，可能需要你一点小技巧才能找出来。你可以试着探索一下图像的最低有效位（LSB），你会发现一些隐藏的内容。
-
-> 在你解开谜题后，记得访问这个链接：
-
-> [https://kmp.goodfish.site/小G的照片/](https://kmp.goodfish.site/小G的照片/)
-
 > 祝你好运！期待看到你解谜后的表情～
-
 > 你的朋友，小G
 
 尽管小A对计算机了解不多，但他并不愿放弃这个线索。他找到你，希望你能够帮助他解开这张照片背后的谜团。你需要利用LSB隐写技术，揭开其中隐藏的信息，找出小G想传达的内容。能否解开这个谜题，全看你能否运用你的智慧。（图片可右键另存为，文件40MB+，比较大）

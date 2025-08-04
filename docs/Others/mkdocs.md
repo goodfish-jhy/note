@@ -14,9 +14,9 @@ MkDocs 是一款轻量级的静态网站生成工具，专门用于快速搭建�
 
 其适合如下场景：
 
- - 个人知识库：整理技术笔记、读书摘要、学习心得，随时在线查阅。
- - 小型团队共享：统一管理项目文档或协作教程，保持信息透明。
- - 开源项目：替代复杂文档框架，低成本维护清晰的说明页面。
+- 个人知识库：整理技术笔记、读书摘要、学习心得，随时在线查阅。
+- 小型团队共享：统一管理项目文档或协作教程，保持信息透明。
+- 开源项目：替代复杂文档框架，低成本维护清晰的说明页面。
 
 !!! Abstract
     MkDocs 以极简主义的设计理念，解决了传统文档工具的臃肿问题。它不仅满足了“随手记录，便捷发布”的核心需求，还通过可定制化和自动化能力，成为构建个人在线笔记本的性价比之选。
@@ -219,7 +219,7 @@ watch: ["docs", "config.yml"]  # 开发服务器监听的文件变化
 
 需要注意的是，如果需要在配置文件当中引用本地文件，是以`docs`文件夹为根目录表示，例如：
 
- - `\test\docs\assets\xxx.js` 应为 `assets\xxx.js`
+- `\test\docs\assets\xxx.js` 应为 `assets\xxx.js`
 
 对于 [Material Design Icons](https://pictogrammers.com/library/mdi/) 内的图标，可以使用 `material\xxxx` 的方式嵌入。
 
@@ -266,12 +266,16 @@ theme:
 
 接下来，本文将详细阐述通过Docker容器进行应用部署的具体流程。在开始之前，需要准备一台可正常连接的服务器（关于云服务器的选购不在本文讨论范围内）。
 
-宝塔面板的安装
+#### 4.1.1 宝塔面板的安装
+
 通过执行以下命令即可完成宝塔面板的一键安装。该命令会自动检测系统环境并选择最合适的下载方式：
 
 ```bash
 if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec
 ```
+
+#### 4.2.2 安装Docker及镜像
+
 安装完成后，登录宝塔面板并在左侧功能菜单中找到Docker选项。首次使用时系统会提示安装Docker服务，只需按照提示完成安装即可。
 
 在Docker管理界面中搜索并安装Material for MkDocs镜像，安装完成后将本地项目文件完整上传至服务器指定目录即可完成部署。
@@ -284,32 +288,44 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 
 但在此之前，请确保已完成以下准备工作：
 
-1. **初始化 Git 仓库**  
+#### 4.2.1 初始化 Git 仓库
+
   在项目根目录下运行：
+
   ```bash
   git init
   git remote add origin https://github.com/你的用户名/你的仓库名.git
   ```
+
   并将本地代码推送到 GitHub：
+
   ```bash
   git add .
   git commit -m "init mkdocs site"
   git push -u origin master
   ```
 
-2. **配置 GitHub Pages**  
-  在 GitHub 仓库的设置（Settings）页面，找到 Pages 部分，选择 `gh-pages` 分支作为发布源。
+#### 4.2.2 配置 GitHub Pages
 
-3. **部署到 GitHub Pages**  
+在 GitHub 仓库的设置（Settings）页面，找到 Pages 部分，选择 `gh-pages` 分支作为发布源。
+
+#### 4.2.3 部署到 GitHub Pages
+
   运行：
+
   ```bash
   mkdocs gh-deploy
   ```
-  该命令会自动构建并推送 `site` 目录内容到 `gh-pages` 分支。
 
-部署完成后，你可以通过 `https://你的用户名.github.io/你的仓库名/` 访问你的 MkDocs 网站。
+  该命令会自动构建并推送 `site` 目录内容到 `gh-pages` 分支。
+  
+  部署完成后，你可以通过 `https://你的用户名.github.io/你的仓库名/` 访问你的 MkDocs 网站。
+
+#### 4.2.4 自定义域名
 
 如需自定义域名，可在`docs`目录下添加 `CNAME` 文件并填写入域名，并在 GitHub Pages 设置中填写你的域名。
+
+#### 4.2.5 GitHub Action 自动推送
 
 同时，还可以通过`GitHub Action`来实现在`git push`时自动推送到 `gh-pages`。
 
