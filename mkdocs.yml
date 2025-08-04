@@ -4,10 +4,13 @@ site_author: GoodFish
 repo_name: goodfish-jhy/note
 repo_url: https://github.com/goodfish-jhy/note/
 copyright: Copyright &copy; 2016 - 2025 GoodFish
+site_description: GoodFish的个人笔记本，记录OI、CTF、IPhO等内容，使用MkDocs搭建，支持Markdown语法。
+
 
 
 # Configuration
 theme:
+  a11y: true
   favicon: /assets/image/logo.jpeg
   icon: 
     logo: material/notebook-outline
@@ -177,7 +180,7 @@ extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.5.0/style.css
   - assets/katex/dist/katex.min.css
   - assets/stylesheets/extra.css
-  - assets/front/style.css
+  - assets/font/style.css
 
 extra_javascript:
   - assets/katex/dist/katex.min.js
