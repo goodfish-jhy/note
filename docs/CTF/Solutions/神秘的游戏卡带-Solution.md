@@ -1,6 +1,6 @@
 # 神秘的游戏卡带-Solution
 
-[【点我传送题面】](https://note.goodfish.site/Problems/%E7%A5%9E%E7%A7%98%E7%9A%84%E6%B8%B8%E6%88%8F%E5%8D%A1%E5%B8%A6/)
+[【点我传送题面】](https://note.goodfish.site/CTF/Problems/%E7%A5%9E%E7%A7%98%E7%9A%84%E6%B8%B8%E6%88%8F%E5%8D%A1%E5%B8%A6/)
 
 拿到密文无从下手，不要害怕先看提示，注意到标签上的PNG
 
