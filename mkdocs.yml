@@ -114,6 +114,7 @@ markdown_extensions:
 # Extensions
 
 plugins:
+  - toc
   - search  # 内置搜索插件
   
   - git-revision-date-localized:  # 显示最后修改时间
@@ -158,11 +159,12 @@ nav:
         - "图像隐写": CTF/Misc/图像隐写.md
         - "音频隐写": CTF/Misc/音频隐写.md
   - IPhO:
-    - "数学基础":
+    - IPhO/index.md
+    - "Math":
       - "弧度制": IPhO/弧度制.md
       - "三角函数": IPhO/三角函数.md
       - "向量": IPhO/向量.md
-    - "力学":
+    - "Mechanics":
       - "重力": IPhO/重力.md
       - "弹力": IPhO/弹力.md
       - "摩擦力": IPhO/摩擦力.md

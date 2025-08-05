@@ -25,5 +25,10 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install -r requirements.txt
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install dependencies\mkdocs_toc_plugin-0.0.1-py3-none-any.whl
+
       - run: mkdocs gh-deploy --force
