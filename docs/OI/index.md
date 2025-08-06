@@ -18,5 +18,6 @@
   - 矩阵加速递推: Algorithms/矩阵加速递推/
 - "Solution":
   - "P13321 [GCJ 2012 #1C] Diamond Inheritance Solution": Solutions/P13321/
+  - "LeetCode 打家劫舍I-III": Solutions/house-robber.md
 
 {{ END_TOC }}

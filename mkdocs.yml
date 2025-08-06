@@ -140,6 +140,7 @@ nav:
     - OI/index.md
     - Solutions:
       - "P13321 [GCJ 2012 #1C] Diamond Inheritance": OI/Solutions/P13321.md
+      - "LeetCode 打家劫舍I-III": OI/Solutions/house-robber.md
     - Algorithms:
       - "并查集": OI/Algorithms/并查集.md
       - "矩阵乘法": OI/Algorithms/矩阵乘法.md
