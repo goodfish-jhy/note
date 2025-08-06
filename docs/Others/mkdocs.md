@@ -1,12 +1,12 @@
 # MkDocs搭建个人笔记本
 
-## 0.前言
+## 0 前言
 
 本文旨在引导新手从零开始搭建一个部署于 GitHub Pages 的 MkDocs 个人笔记本，对于具体实现效果可以参考 [Home-GoodFish的笔记本](https://note.goodfish.site)。
 
 需要注意的是，本教程偏向于在线笔记本而非博客，关于MkDocs搭建博客还请移步他处。
 
-## 1.简介
+## 1 简介
 
 在开始搭建之前，我们先来了解一下MkDocs是什么，以便读者对其能有较为整体的认识。
 
@@ -21,11 +21,13 @@ MkDocs 是一款轻量级的静态网站生成工具，专门用于快速搭建�
 !!! Abstract
     MkDocs 以极简主义的设计理念，解决了传统文档工具的臃肿问题。它不仅满足了“随手记录，便捷发布”的核心需求，还通过可定制化和自动化能力，成为构建个人在线笔记本的性价比之选。
 
-## 2.配置环境
+## 2 配置环境
 
 读者请确保当前电脑环境下有可正常使用的 Python3 环境，具体安装过程此处不过多赘述，可自行搜索教程。
 
 请读者自行创建一个文件夹，后续文件存放在该文件夹下，并在这一目录下打开命令行。
+
+### 2.1 创建虚拟环境（可选）
 
 为防止不同项目之间存在依赖冲突，读者可以通过创建虚拟环境来避免。当然，这一步并非必须。
 
@@ -52,11 +54,20 @@ source .venv/bin/activate
 
 至此，虚拟环境配置就结束了。
 
-------
+### 2.2 安装依赖
 
-MkDocs 是 Python 的一个包，可直接使用 `pip install mkdocs` 安装。
+MkDocs 是一个基于 Python 的静态网站生成工具包，可通过 pip 包管理器直接安装。  
 
-随后使用`pip install mkdocs-material` 安装 mkdocs-material，这是 MkDocs 的一个主题，本网站就是基于这一主题，接下来也将以这一主题为示范。
+本网站采用 MkDocs 的官方主题 mkdocs-material 进行构建，后续示例也将基于该主题展开。  
+
+安装命令如下：  
+
+```bash
+pip install mkdocs
+pip install mkdocs-material
+```
+
+### 2.3 创建工作目录
 
 ```bash
 mkdocs new test    # 创建一个名为 test 的文件夹,存储网站相关文件
@@ -81,9 +92,11 @@ mkdocs serve
 
 在浏览器中输入 `127.0.0.1:8000` 预览，终端键入 ++ctrl+c++ 关闭。
 
-## 3.MkDocs配置
+## 3 MkDocs配置
 
-这边提供一份MkDocs配置文件的参考，读者可了解各配置项的功能
+### 3.1 参考配置文件
+
+笔者在此提供一份MkDocs配置文件的参考，以便读者了解各配置项的功能
 
 ```yaml title="mkdocs.yml"
 # ====================== 基础配置 ======================
@@ -217,11 +230,15 @@ use_directory_urls: true  # 使用目录式URL（如/page/而非/page.html）
 watch: ["docs", "config.yml"]  # 开发服务器监听的文件变化
 ```
 
+### 3.2 引用文件图标
+
 需要注意的是，如果需要在配置文件当中引用本地文件，是以`docs`文件夹为根目录表示，例如：
 
 - `\test\docs\assets\xxx.js` 应为 `assets\xxx.js`
 
 对于 [Material Design Icons](https://pictogrammers.com/library/mdi/) 内的图标，可以使用 `material\xxxx` 的方式嵌入。
+
+### 3.3 亮暗色切换
 
 如果读者需要亮暗色切换，可以参考：
 
@@ -256,7 +273,37 @@ theme:
 ??? Warning "注意"
     这里的 `light_mode` 和 `dark_mode` 是笔者自定义的样式，不能直接使用，具体配置参考笔者github仓库中 `\docs\assets\stylesheets\extra.css`文件。
 
-## 4.MkDocs 部署
+### 3.4 $\LaTeX$ 支持
+
+使用 `MathJax` 嵌入即可实现。
+
+``` yaml title="mkdocs.yml"
+markdown_extensions:
+  - pymdownx.arithmatex
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+```
+
+由于 `MathJax` 的渲染速度较慢，可以考虑使用 $\KaTeX$ 进行替代。
+
+需要注意的是，$\KaTeX$ 原生不支持美金符号包裹的语法，需要额外引用一个js脚本:
+
+```js title="katex-autorender-init.js"
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+      delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+  });
+});
+```
+
+## 4 MkDocs 部署
 
 到这一步，读者应确保修改后的配置文件不存在错误，即在本地运行 `mkdcos serve` 可以正常预览效果。
 
@@ -282,50 +329,55 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 
 关于域名配置和SSL证书等后续设置，都可以通过宝塔面板提供的可视化界面便捷地完成配置。
 
+!!! Info "关于 git-revision-date-localized 插件"
+    如果需要使用 `git-revision-date-localized` 插件实现显示创建和修改时间，需要在 GitHub 中同时维护一个储存库，这样插件才可以从 Git 记录中获取相关信息。
+
 ### 4.2 部署到Github Page
 
 要部署到 Github Pages，只需在本地运行 `mkdocs gh-deploy` 命令即可自动将生成的静态网站部署到你的 GitHub 仓库的 `gh-pages` 分支，并通过 GitHub Pages 服务进行托管。
 
-但在此之前，请确保已完成以下准备工作：
+由于篇幅限制，GitHub账号注册以及如何流畅访问不在本文探讨范围内。
 
-#### 4.2.1 初始化 Git 仓库
+#### 4.2.1 创建 GitHub仓库
 
-  在项目根目录下运行：
+在登录到 GitHub 账号之后，打开 [New repository](https://github.com/new) 页面创建新存储库。在此处可以配置你的仓库名、描述等信息。
 
-  ```bash
-  git init
-  git remote add origin https://github.com/你的用户名/你的仓库名.git
-  ```
+创建好仓库之后就可以将其绑定到本地的工作目录了，若读者电脑没有安装 Git，可以到 [https://git-scm.com/downloads](https://git-scm.com/downloads) 下载。
 
-  并将本地代码推送到 GitHub：
+#### 4.2.2 初始化 Git 仓库
 
-  ```bash
-  git add .
-  git commit -m "init mkdocs site"
-  git push -u origin master
-  ```
+在项目根目录下运行：
 
-#### 4.2.2 配置 GitHub Pages
+```bash
+git init
+git remote add origin https://github.com/你的用户名/你的仓库名.git
+```
 
-在 GitHub 仓库的设置（Settings）页面，找到 Pages 部分，选择 `gh-pages` 分支作为发布源。
+并将本地代码推送到 GitHub：
+
+```bash
+git add .
+git commit -m "init mkdocs site"
+git push -u origin master
+```
 
 #### 4.2.3 部署到 GitHub Pages
 
-  运行：
+运行：
 
-  ```bash
-  mkdocs gh-deploy
-  ```
+```bash
+mkdocs gh-deploy
+```
 
-  该命令会自动构建并推送 `site` 目录内容到 `gh-pages` 分支。
-  
-  部署完成后，你可以通过 `https://你的用户名.github.io/你的仓库名/` 访问你的 MkDocs 网站。
+该命令会自动构建并推送 `site` 目录内容到 `gh-pages` 分支。
+
+部署完成后，你可以通过 `https://你的用户名.github.io/你的仓库名/` 访问你的 MkDocs 网站。
 
 #### 4.2.4 自定义域名
 
 如需自定义域名，可在`docs`目录下添加 `CNAME` 文件并填写入域名，并在 GitHub Pages 设置中填写你的域名。
 
-#### 4.2.5 GitHub Action 自动推送
+#### 4.2.5 通过 GitHub Action 实现自动部署
 
 同时，还可以通过`GitHub Action`来实现在`git push`时自动推送到 `gh-pages`。
 
@@ -364,3 +416,12 @@ jobs:
 ```
 
 需要将高亮的行中的依赖进行修改，修改为读者实际的环境依赖。
+
+## 5 撰写文章
+
+完成了上述配置之后，就可以开始撰写文章了。
+
+在MkDocs中，所有文章均以MarkDown 格式存储在`docs`文件夹下。
+
+在完成了文章编辑后，不要忘记在`mkdocs.yml`中nav处添加文章（如果启用的话）。
+
