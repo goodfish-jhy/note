@@ -19,5 +19,7 @@
 - "Solution":
   - "P13321 [GCJ 2012 #1C] Diamond Inheritance Solution": Solutions/P13321/
   - "LeetCode 打家劫舍I-III": Solutions/house-robber/
+- "TroubleShooting":
+  - "TroubleShooting解决": /TroubleShooting/
 
 {{ END_TOC }}

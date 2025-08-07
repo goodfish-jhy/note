@@ -142,6 +142,7 @@ nav:
     - index.md
   - OI:
     - OI/index.md
+    - "TroubleShooting": OI/TroubleShooting.md
     - Solutions:
       - "P13321 [GCJ 2012 #1C] Diamond Inheritance": OI/Solutions/P13321.md
       - "LeetCode 打家劫舍I-III": OI/Solutions/house-robber.md
