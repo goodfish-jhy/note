@@ -2,3 +2,4 @@ site/
 .cache/
 .venv/
 monitor.py
+monitor.html
