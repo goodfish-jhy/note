@@ -63,6 +63,7 @@ theme:
     - toc.follow
 
 markdown_extensions:
+  - codehilite
   - abbr
   - admonition
   - attr_list
@@ -116,6 +117,9 @@ markdown_extensions:
 plugins:
   - toc
   - search  # 内置搜索插件
+
+  - encryptcontent:  # 内容加密插件
+      password_file: 'passwords.yml'
   
   - git-revision-date-localized:  # 显示最后修改时间
       type: "datetime"
