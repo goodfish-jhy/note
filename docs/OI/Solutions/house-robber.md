@@ -35,3 +35,40 @@ public:
     }
 };
 ```
+
+## [打家劫舍 II](https://leetcode.cn/problems/house-robber-ii/description/)
+
+与上一题相比，本题将房屋改为环形排列（首尾相连），此时不能同时盗窃第一间和最后一间房屋，其他条件均不变。
+
+为简化问题，我们可将环形拆解为两个线性问题分别处理：
+
+ - 首先计算偷第一间时不偷最后一间的最大金额；
+ 
+ - 再计算偷最后一间时不偷第一间的最大金额；
+ 
+ - 最终比较这两种情况，取其中的最大值作为最终解。
+
+```cpp
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        if (n == 0) return 0;
+        if (n == 1) return nums[0];
+        return max(robRange(nums, 0, n-2), // 偷首不偷尾
+                   robRange(nums, 1, n-1)); // 偷尾不偷首   
+    }
+
+private:
+    // 辅助函数：处理从start到end的线性盗窃问题
+    int robRange(vector<int>& nums, int start, int end) {
+        int prev = 0, curr = 0;
+        for (int i = start; i <= end; ++i) {
+            int temp = max(curr, prev + nums[i]);
+            prev = curr;
+            curr = temp;
+        }
+        return curr;
+    }
+};
+```
