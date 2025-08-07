@@ -1,4 +1,4 @@
-# OI
+# IPhO
 
 !!! Abstract
     这里是一些有关于IPhO竞赛的内容，分类比较杂乱。
