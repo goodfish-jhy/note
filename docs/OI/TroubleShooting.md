@@ -67,7 +67,7 @@
 
 填充 `char`、`unsigned char`等多字节类型时，任何填充值都是安全的，例如：
 
-!!!​ exmaple
+!!! example
 
     ```cpp
     char str[5];
