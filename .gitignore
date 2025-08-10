@@ -1,6 +1,6 @@
 site/
 .cache/
 .venv/
-password.yml
+passwords.yml
 monitor.py
 monitor.html
