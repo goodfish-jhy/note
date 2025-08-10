@@ -1,7 +1,3 @@
----
-level: classified
----
-
 # 小G的照片-Solution
 
 [【点我传送题面】](https://note.goodfish.site/CTF/Problems/%E5%B0%8FG%E7%9A%84%E7%85%A7%E7%89%87/)
