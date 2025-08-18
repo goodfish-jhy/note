@@ -180,6 +180,7 @@ nav:
   - Others:
     - "教程": 
       - "MkDocs搭建个人笔记本": Others/mkdocs.md
+      - "HackNet攻略": Others/hacknet.md
 
 extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
