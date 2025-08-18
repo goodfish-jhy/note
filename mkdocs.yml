@@ -7,7 +7,6 @@ copyright: Copyright &copy; 2016 - 2025 GoodFish
 site_description: GoodFish的个人笔记本，记录OI、CTF、IPhO等内容，使用MkDocs搭建，支持Markdown语法。
 
 
-
 # Configuration
 theme:
   a11y: true
@@ -63,6 +62,7 @@ theme:
     - toc.follow
 
 markdown_extensions:
+  - codehilite
   - abbr
   - admonition
   - attr_list
@@ -116,6 +116,9 @@ markdown_extensions:
 plugins:
   - toc
   - search  # 内置搜索插件
+
+#   - encryptcontent:  # 内容加密插件
+#       password_file: 'passwords.yml'
   
   - git-revision-date-localized:  # 显示最后修改时间
       type: "datetime"
@@ -138,6 +141,7 @@ nav:
     - index.md
   - OI:
     - OI/index.md
+    - "TroubleShooting": OI/TroubleShooting.md
     - Solutions:
       - "P13321 [GCJ 2012 #1C] Diamond Inheritance": OI/Solutions/P13321.md
       - "LeetCode 打家劫舍I-III": OI/Solutions/house-robber.md
@@ -175,6 +179,7 @@ nav:
   - Others:
     - "教程": 
       - "MkDocs搭建个人笔记本": Others/mkdocs.md
+      - "HackNet攻略": Others/hacknet.md
 
 extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css

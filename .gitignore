@@ -2,3 +2,5 @@ site/
 .cache/
 .venv/
 monitor.py
+monitor.html
+passwords.yml
