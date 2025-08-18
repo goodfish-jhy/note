@@ -1,11 +1,11 @@
 # OI
 
 !!! Abstract
-    这里是一些有关于信奥竞赛的内容，分类比较杂乱
+    这里是一些有关OI竞赛的内容
 
     主要是一些竞赛题目的题解，以及一些算法相关的文章
 
-    可能一些游记类的文章也会放在一起。
+    可能一些工具类的文章也会放在一起。
 
 ## Table Of Contents
 
@@ -21,5 +21,4 @@
   - "LeetCode 打家劫舍I-III": Solutions/house-robber/
 - "TroubleShooting":
   - "TroubleShooting解决": /TroubleShooting/
-
 {{ END_TOC }}
