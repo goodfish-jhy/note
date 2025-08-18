@@ -7,7 +7,6 @@ copyright: Copyright &copy; 2016 - 2025 GoodFish
 site_description: GoodFish的个人笔记本，记录OI、CTF、IPhO等内容，使用MkDocs搭建，支持Markdown语法。
 
 
-
 # Configuration
 theme:
   a11y: true
