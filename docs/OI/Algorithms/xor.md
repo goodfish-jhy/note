@@ -134,4 +134,3 @@ for (int i = 1; i <= nums.size(); i++) {
     prefix_xor[i] = prefix_xor[i - 1] ^ nums[i - 1];
 }
 ```
-
