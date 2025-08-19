@@ -1,6 +1,6 @@
-# 打家劫舍 I-III
+# 打家劫舍 I-IV
 
-打家劫舍是一套LeetCode上的经典的动态规划题目，由浅入深，这里笔者将分别对每题进行讲解。
+打家劫舍是一套LeetCode上的经典的动态规划题目，共四道，由浅入深，这里笔者将分别对每题进行讲解。
 
 ## [打家劫舍 I](https://leetcode.cn/problems/house-robber/description/)
 
@@ -89,3 +89,6 @@ $$f[i][0] = \max (f[i.child_1][1], f[i.child_2][1]) \\
 f[i][1] = nums[i] + \max (f[i.child_1][0], f[i.child_2][0])$$
 
 当然，也通过记忆化搜索可以进一步减少空间占用。
+
+## [打家劫舍IV](https://leetcode.cn/problems/house-robber-iv/description/)
+

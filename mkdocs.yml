@@ -141,10 +141,9 @@ nav:
     - index.md
   - OI:
     - OI/index.md
-    - "TroubleShooting": OI/TroubleShooting.md
     - Solutions:
       - "P13321 [GCJ 2012 #1C] Diamond Inheritance": OI/Solutions/P13321.md
-      - "LeetCode 打家劫舍I-III": OI/Solutions/house-robber.md
+      - "LeetCode 打家劫舍I-IV": OI/Solutions/house-robber.md
     - Algorithms:
       - "并查集": OI/Algorithms/并查集.md
       - "矩阵乘法": OI/Algorithms/矩阵乘法.md
@@ -177,9 +176,11 @@ nav:
       - "力的平衡": IPhO/力的平衡.md
       - "牛顿三大定律": IPhO/牛顿三大定律.md
   - Others:
-    - "教程": 
+    - Others/index.md
+    - "Guide": 
       - "MkDocs搭建个人笔记本": Others/mkdocs.md
       - "HackNet攻略": Others/hacknet.md
+    - "TroubleShooting": Others/TroubleShooting.md
 
 extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
