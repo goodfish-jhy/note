@@ -12,7 +12,8 @@
 {{ BEGIN_TOC }}
 
 - "Algorithms":
-  - 并查集 : Algorithms/并查集/
+  - 并查集: Algorithms/并查集/
+  - 字典树: Algorithms/字典树/
   - 异或运算: Algorithms/xor/
   - 分数规划: Algorithms/分数规划/
   - 矩阵乘法: Algorithms/矩阵乘法/

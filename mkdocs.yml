@@ -146,6 +146,7 @@ nav:
       - "LeetCode 打家劫舍I-IV": OI/Solutions/house-robber.md
     - Algorithms:
       - "并查集": OI/Algorithms/并查集.md
+      - "字典树": OI/Algorithms/字典树.md
       - "矩阵乘法": OI/Algorithms/矩阵乘法.md
       - "异或运算": OI/Algorithms/xor.md
       - "矩阵加速递推": OI/Algorithms/矩阵加速递推.md
