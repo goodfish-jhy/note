@@ -13,6 +13,7 @@
 
 - "Algorithms":
   - 并查集 : Algorithms/并查集/
+  - 异或运算: Algorithms/xor/
   - 分数规划: Algorithms/分数规划/
   - 矩阵乘法: Algorithms/矩阵乘法/
   - 矩阵加速递推: Algorithms/矩阵加速递推/

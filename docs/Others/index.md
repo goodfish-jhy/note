@@ -10,9 +10,9 @@
 {{ BEGIN_TOC }}
 
 - "Guide":
-  - "HackNet攻略": Others/hacknet/
-  - "MkDocs搭建个人笔记本": Others/mkdocs/
+  - "HackNet攻略": /Others/hacknet/
+  - "MkDocs搭建个人笔记本": /Others/mkdocs/
 - "TroubleShooting":
-  - "TroubleShooting解决": Others/TroubleShooting/
+  - "TroubleShooting解决": /Others/TroubleShooting/
 
 {{ END_TOC }}
