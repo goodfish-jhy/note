@@ -142,6 +142,7 @@ nav:
     - OI/index.md
     - Solutions:
       - "P13321 [GCJ 2012 #1C] Diamond Inheritance": OI/Solutions/P13321.md
+      - "P13718 [GCPC 2024] Copycat Catcher": OI/Solutions/P13718.md
       - "LeetCode 打家劫舍I-IV": OI/Solutions/house-robber.md
     - Algorithms:
       - "并查集": OI/Algorithms/并查集.md
