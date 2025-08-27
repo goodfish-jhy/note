@@ -177,6 +177,9 @@ nav:
       - "力的合成与分解": IPhO/力的合成与分解.md
       - "力的平衡": IPhO/力的平衡.md
       - "牛顿三大定律": IPhO/牛顿三大定律.md
+    - "Kinematics":
+      - "牛顿三大定律": IPhO/牛顿三大定律.md
+
   - Others:
     - Others/index.md
     - "Guide": 
