@@ -54,7 +54,7 @@ jobs:
       - name: Refresh CDN
         if: steps.changed.outputs.files != ''
         run: |
-          python .github/scripts/refresh_cdn.py
+          python ../.github/scripts/refresh_cdn.py
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
           MAP_MD_TO_HTML: 'false'
