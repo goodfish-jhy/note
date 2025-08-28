@@ -54,6 +54,8 @@ jobs:
       - name: Refresh CDN
         if: steps.changed.outputs.files != ''
         run: |
+          ls -l
+          pwd
           python ../.github/scripts/refresh_cdn.py
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
