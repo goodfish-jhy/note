@@ -1,6 +1,9 @@
 name: cdn-refresh
+
 on:
   workflow_run:
+    workflows: ["ci"]
+    types: [completed]
 
 permissions:
   contents: read
