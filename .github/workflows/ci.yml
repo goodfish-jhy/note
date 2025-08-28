@@ -34,5 +34,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install ./dependencies/mkdocs_toc_plugin-0.0.1-py3-none-any.whl
+      
+      - name: Refresh CDN cache
+        uses: ./.github/workflows/cdn-refresh.yml
 
       - run: mkdocs gh-deploy --force

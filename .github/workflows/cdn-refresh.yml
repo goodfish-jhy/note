@@ -1,8 +1,6 @@
 name: cdn-refresh
 on:
   workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
 
 permissions:
   contents: read
