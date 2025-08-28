@@ -67,15 +67,19 @@ class CDNRefresher:
             sys.exit(1)
     
     def _build_urls(self) -> List[str]:
-        """构建需要刷新的URL列表"""
+        """构建需要刷新的URL列表
+        通过环境变量 MAP_MD_TO_HTML 控制是否将 .md 转换为 .html（默认转换）。
+        当工作流监听 gh-pages 分支时，应设置 MAP_MD_TO_HTML=false。
+        """
         if not self.changed_files:
             return []
         
         urls = []
+        map_md_to_html = os.environ.get('MAP_MD_TO_HTML', 'true').lower() == 'true'
         for file_path in self.changed_files.strip().split('\n'):
             if file_path:
-                if file_path.endswith('.md'):
-                    # Markdown文件转换为HTML URL
+                if file_path.endswith('.md') and map_md_to_html:
+                    # Markdown文件转换为HTML URL（仅当启用时）
                     html_file = file_path[:-3] + '.html'
                     url = f'https://{self.cdn_domain}/{html_file}'
                     urls.append(url)

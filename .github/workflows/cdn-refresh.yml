@@ -1,0 +1,57 @@
+name: cdn-refresh
+on:
+  push:
+    branches:
+      - gh-pages
+
+permissions:
+  contents: read
+
+env:
+  CDN_DOMAIN: ${{ secrets.CDN_DOMAIN }}
+  TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+  TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+  TENCENT_REGION: ${{ secrets.TENCENT_REGION || 'ap-beijing' }}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pages branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: gh-pages
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install Tencent Cloud SDK
+        run: |
+          pip install -r .github/requirements.txt
+
+      - name: Collect changed files
+        id: changed
+        run: |
+          PREV=$(git rev-parse HEAD~1)
+          CURR=$(git rev-parse HEAD)
+          CHANGED=$(git diff --name-only $PREV $CURR | grep -E '\.(html|css|js|png|jpg|jpeg|gif|svg|ico|xml|txt|json|map)$' || echo "")
+          if [ -z "$CHANGED" ]; then
+            echo "files=" >> $GITHUB_OUTPUT
+          else
+            echo "files<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGED" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+          echo "Changed files:" && echo "$CHANGED"
+
+      - name: Refresh CDN
+        if: steps.changed.outputs.files != ''
+        run: |
+          python .github/scripts/refresh_cdn.py
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          MAP_MD_TO_HTML: 'false'
+

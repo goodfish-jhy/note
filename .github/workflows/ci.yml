@@ -1,4 +1,4 @@
-name: CI/CD with CDN Refresh
+name: ci 
 on:
   push:
     branches:
@@ -6,25 +6,16 @@ on:
       - main
 permissions:
   contents: write
-  id-token: write
-
-env:
-  CDN_DOMAIN: ${{ secrets.CDN_DOMAIN }}  # 你的CDN域名，例如：example.com
-  TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
-  TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
-  TENCENT_REGION: ap-beijing  # 腾讯云地域，根据你的配置调整
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
+ 
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
@@ -39,64 +30,10 @@ jobs:
           restore-keys: |
             mkdocs-material-
       
+ 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pip install ./dependencies/mkdocs_toc_plugin-0.0.1-py3-none-any.whl
 
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
-
-      - name: Get changed files
-        id: changed-files
-        run: |
-          # 获取上次部署的commit hash
-          PREV_COMMIT=$(git rev-parse HEAD~1)
-          CURRENT_COMMIT=$(git rev-parse HEAD)
-          
-          # 获取修改的文件列表
-          CHANGED_FILES=$(git diff --name-only $PREV_COMMIT $CURRENT_COMMIT | grep -E '\.(md|html|css|js|png|jpg|jpeg|gif|svg|ico|xml|txt)$' || echo "")
-          
-          # 如果没有修改的文件，设置为空字符串
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "changed_files=" >> $GITHUB_OUTPUT
-          else
-            echo "changed_files<<EOF" >> $GITHUB_OUTPUT
-            echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-          fi
-          
-          echo "Changed files:"
-          echo "$CHANGED_FILES"
-
-      - name: Install Tencent Cloud SDK
-        if: steps.changed-files.outputs.changed_files != ''
-        run: |
-          pip install -r .github/requirements.txt
-
-      - name: Refresh CDN Cache
-        if: steps.changed-files.outputs.changed_files != ''
-        run: |
-          python .github/scripts/refresh_cdn.py
-        env:
-          CHANGED_FILES: ${{ steps.changed-files.outputs.changed_files }}
-
-      - name: Manual CDN Refresh (Fallback)
-        if: steps.changed-files.outputs.changed_files != '' && failure()
-        run: |
-          echo "自动CDN刷新失败，请手动刷新以下文件:"
-          echo "${{ steps.changed-files.outputs.changed_files }}"
-          
-          # 构建手动刷新的URL列表
-          CHANGED_FILES="${{ steps.changed-files.outputs.changed_files }}"
-          echo "需要手动刷新的CDN URL:"
-          echo "$CHANGED_FILES" | while IFS= read -r file; do
-            if [ -n "$file" ]; then
-              if [[ "$file" == *.md ]]; then
-                html_file="${file%.md}.html"
-                echo "https://${{ env.CDN_DOMAIN }}/$html_file"
-              else
-                echo "https://${{ env.CDN_DOMAIN }}/$file"
-              fi
-            fi
-          done
+      - run: mkdocs gh-deploy --force
