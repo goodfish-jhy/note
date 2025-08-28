@@ -30,7 +30,7 @@ jobs:
 
       - name: Install Tencent Cloud SDK
         run: |
-          pip install -r .github/requirements.txt
+          pip install tencentcloud-sdk-python
 
       - name: Collect changed files
         id: changed
@@ -58,4 +58,3 @@ jobs:
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
           MAP_MD_TO_HTML: 'false'
-
