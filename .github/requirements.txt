@@ -1,0 +1,2 @@
+# 腾讯云CDN刷新脚本依赖
+tencentcloud-sdk-python>=3.0.1000
