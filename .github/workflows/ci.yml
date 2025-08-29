@@ -66,18 +66,18 @@ jobs:
       - name: Collect changed files
         id: changed
         run: |
-          # 获取gh-pages分支最新代码
-          git fetch origin gh-pages:gh-pages
+          # 获取远程gh-pages分支但不创建本地分支
+          git fetch origin gh-pages
           
-          # 检查gh-pages分支是否有至少2个提交
-          if [ "$(git rev-list --count gh-pages)" -gt 1 ]; then
-            PREV=$(git rev-parse gh-pages~1)
+          # 检查远程gh-pages分支是否有至少2个提交
+          if [ "$(git rev-list --count origin/gh-pages)" -gt 1 ]; then
+            PREV=$(git rev-parse origin/gh-pages~1)
           else
-            PREV=$(git rev-parse gh-pages)
+            PREV=$(git rev-parse origin/gh-pages)
           fi
-          CURR=$(git rev-parse gh-pages)
+          CURR=$(git rev-parse origin/gh-pages)
           
-          # 比较gh-pages分支的提交差异
+          # 比较远程gh-pages分支的提交差异
           CHANGED=$(git diff --name-only $PREV $CURR | grep -E '\.(html|css|js|png|jpg|jpeg|gif|svg|ico|xml|txt|json|map)$' || echo "")
           if [ -z "$CHANGED" ]; then
             echo "files=" >> $GITHUB_OUTPUT
