@@ -44,7 +44,7 @@ jobs:
       
       - run: mkdocs gh-deploy --force
 
-  refresh:
+  cdn-refresh:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
