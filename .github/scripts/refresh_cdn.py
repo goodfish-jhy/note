@@ -5,11 +5,11 @@
 支持批量处理、错误重试和详细日志
 """
 
-import json
+import re
 import os
 import sys
 import time
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union
 from tencentcloud.common import credential
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cdn.v20180606 import cdn_client, models
