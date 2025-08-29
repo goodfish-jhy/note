@@ -76,9 +76,7 @@ jobs:
             PREV=$(git rev-parse origin/gh-pages)
           fi
           CURR=$(git rev-parse origin/gh-pages)
-          
-          # 修改正则表达式以确保匹配子目录中的HTML文件
-          CHANGED=$(git diff --name-only $PREV $CURR | grep -E '\.html$|\.css$|\.js$|\.png$|\.jpg$|\.jpeg$|\.gif$|\.svg$|\.ico$|\.xml$|\.txt$|\.json$|\.map$' || echo "")
+          CHANGED=$(git diff --name-only $PREV $CURR)
           if [ -z "$CHANGED" ]; then
             echo "files=" >> $GITHUB_OUTPUT
           else

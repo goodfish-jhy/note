@@ -23,7 +23,7 @@ class CDNRefresher:
         self.secret_key = os.environ.get('TENCENT_SECRET_KEY')
         self.region = os.environ.get('TENCENT_REGION')
         self.cdn_domain = os.environ.get('CDN_DOMAIN')
-        self.changed_files = os.environ.get('CHANGED_FILES')
+        self.changed_files = os.environ.get('CHANGED')
         
         # 腾讯云CDN API限制
         self.max_urls_per_batch = 1000  # 每批最多1000个URL
@@ -66,6 +66,36 @@ class CDNRefresher:
             print(f"✗ 腾讯云客户端初始化失败: {e}")
             sys.exit(1)
     
+    def decode_octal_path(octal_path: Union[str, bytes]) -> str:
+        """转义UTF-8格式中文目录"""
+        if isinstance(octal_path, bytes):
+            s = octal_path.decode('latin-1')
+        else:
+            s = octal_path
+        
+        oct_pat = re.compile(r'\\([0-7]{1,3})')
+
+        def replace_octal(match: re.Match) -> str:
+            oct_val = match.group(1)
+            byte_val = int(oct_val, 8) & 0xFF
+            return chr(byte_val)
+
+        s_bytes_like = oct_pat.sub(replace_octal, s)
+
+        raw_bytes = s_bytes_like.encode('latin-1')
+        try:
+            decoded = raw_bytes.decode('utf-8')
+        except UnicodeDecodeError as e:
+            raise UnicodeDecodeError(
+                "utf-8",
+                raw_bytes,
+                e.start,
+                e.end,
+                f"Invalid UTF‑8 sequence while decoding the path: {e.reason}"
+            ) from None
+
+        return decoded
+    
     def _build_urls(self) -> List[str]:
         """构建需要刷新的URL列表
         通过环境变量 MAP_MD_TO_HTML 控制是否将 .md 转换为 .html（默认转换）。
@@ -76,7 +106,11 @@ class CDNRefresher:
         
         urls = []
         map_md_to_html = os.environ.get('MAP_MD_TO_HTML', 'true').lower() == 'true'
-        for file_path in self.changed_files.strip().split('\n'):
+        for file_path in self.changed_files.strip().split(' '):
+            # 去除 file_path 中可能存在的引号
+            file_path = file_path.strip('\'"')
+            if ('\\' in file_path):
+                file_path = self.decode_octal_path(file_path)
             if file_path:
                 if file_path.endswith('.md') and map_md_to_html:
                     # Markdown文件转换为HTML URL（仅当启用时）
