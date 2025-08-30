@@ -106,7 +106,7 @@ class CDNRefresher:
         
         urls = []
         map_md_to_html = os.environ.get('MAP_MD_TO_HTML', 'true').lower() == 'true'
-        for file_path in self.changed_files.strip().split(' '):
+        for file_path in self.changed_files.strip().split('\n'):
             # 去除 file_path 中可能存在的引号
             file_path = file_path.strip('\'"')
             if ('\\' in file_path):
@@ -125,6 +125,8 @@ class CDNRefresher:
                     print(f"  {file_path} → {url}")
         
         return urls
+
+
     
     def _split_urls_into_batches(self, urls: List[str]) -> List[List[str]]:
         """将URL列表分割成批次"""
