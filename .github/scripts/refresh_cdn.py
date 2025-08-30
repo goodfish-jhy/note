@@ -105,6 +105,7 @@ class CDNRefresher:
             return []
         
         urls = []
+        print(self.changed_files)
         map_md_to_html = os.environ.get('MAP_MD_TO_HTML', 'true').lower() == 'true'
         for file_path in self.changed_files.strip().split('\n'):
             # 去除 file_path 中可能存在的引号
