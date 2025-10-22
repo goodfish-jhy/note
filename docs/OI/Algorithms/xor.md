@@ -110,7 +110,7 @@ int find_single_number(vector<int>& nums) {
 
 ### 计算两个数的汉明距离
 
-汉明距离是指两个数的二进制表示中不同位的数量，可以通过异或运算得到。
+汉明距离是指两个数的二进制表示中不同位的数量，可以通过异或运算得到，其中`__builtin_popcount()`作用是统计二进制中`1`的数量。
 
 ```cpp
 int hamming_distance(int x, int y) {
