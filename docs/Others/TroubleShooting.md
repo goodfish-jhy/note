@@ -159,3 +159,50 @@
 - `None`
 
 相比 `eval()`，`ast.literal_eval()` 不会执行任何函数调用、变量引用或运算符表达式，因而更加安全可靠。
+
+## 5. GCD函数的几种写法
+
+以下这几种写法本质都是辗转相除法，只是在形式和常数因子上有所不同，通常只记最后一种。
+
+1. While函数
+
+!!! example
+
+    ```cpp
+    inline ll gcd(ll a,ll b){
+    ll r;
+    while(b>0){
+        r = a%b;
+        a = b;
+        b = r;
+    }
+    return a;
+    }
+    ```
+
+2. 三目运算符
+
+!!! example
+
+    ```cpp
+    inline ll gcd(ll a,ll b){
+    ll r;
+    while(b>0){
+        r = a%b;
+        a = b;
+        b = r;
+    }
+    return a;
+    }
+    ```
+
+3. 位运算
+
+!!! example
+
+    ```cpp
+    inline ll gcd(ll a,ll b){
+        while(b^=a^=b^=a%=b);
+        return a;
+    }
+    ```
