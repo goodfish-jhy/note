@@ -186,6 +186,7 @@ nav:
     - "electricity":
       - "基础电学": IPhO/基础电学.md
       - "电功率与电能": IPhO/电功率与电能.md
+      - "电磁波": IPhO/电磁波.md
   - Others:
     - Others/index.md
     - "Guide": 

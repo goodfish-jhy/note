@@ -31,10 +31,10 @@ ST表主要用于解决 **可重复贡献问题**，例如区间最大值、最�
 
 数学表达如下：
 
-\begin{align}
+\begin{align*}
 & \max(\boxed{\max(\{a_i, \dots,  a_{i+2^{j-1}-1}\})}\boxed{\max(\{ a_{i+2^{j-1}},\dots a_{i+2^j-1}\}\})})
 \\  = &\max(\boxed{\max(\{a_i, \dots,  a_{i+2^j-1}\}})
-\end{align}
+\end{align*}
 
 综上，我们可以写出ST表初始化和查询的代码：
 
