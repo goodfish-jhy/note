@@ -14,9 +14,9 @@
 - "Algorithms":
   - 并查集: Algorithms/并查集/
   - 字典树: Algorithms/字典树/
-  - "线段树": OI/Algorithms/线段树.md
-  - "树状数组": OI/Algorithms/树状数组.md
-  - "ST表": OI/Algorithms/ST表.md
+  - "线段树": OI/Algorithms/线段树
+  - "树状数组": OI/Algorithms/树状数组
+  - "ST表": OI/Algorithms/ST表
   - 异或运算: Algorithms/xor/
   - 分数规划: Algorithms/分数规划/
   - 矩阵乘法: Algorithms/矩阵乘法/
