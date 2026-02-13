@@ -164,12 +164,10 @@
 
 以下这几种写法本质都是辗转相除法，只是在形式和常数因子上有所不同，通常只记最后一种。
 
-1. While函数
+### 5.1 While函数
 
-!!! example
-
-    ```cpp
-    inline ll gcd(ll a,ll b){
+```cpp
+inline ll gcd(ll a,ll b){
     ll r;
     while(b>0){
         r = a%b;
@@ -177,15 +175,13 @@
         b = r;
     }
     return a;
-    }
-    ```
+}
+```
 
-2. 三目运算符
+### 5.2 三目运算符
 
-!!! example
-
-    ```cpp
-    inline ll gcd(ll a,ll b){
+```cpp
+inline ll gcd(ll a,ll b){
     ll r;
     while(b>0){
         r = a%b;
@@ -193,16 +189,14 @@
         b = r;
     }
     return a;
-    }
-    ```
+}
+```
 
-3. 位运算
+### 5.3 位运算
 
-!!! example
-
-    ```cpp
-    inline ll gcd(ll a,ll b){
-        while(b^=a^=b^=a%=b);
-        return a;
-    }
-    ```
+```cpp
+inline ll gcd(ll a,ll b){
+    while(b^=a^=b^=a%=b);
+    return a;
+}
+```

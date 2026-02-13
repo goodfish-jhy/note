@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 #### 4.1.1 宝塔面板的安装
 
-通过执行以下命令即可完成宝塔面板的一键安装。该命令会自动检测系统环境并选择最合适的下载方式：
+通过执行以下命令即可完成宝塔面板的一键安装。该命令会自动检测系统环境并选择合适的下载方式：
 
 ```bash
 if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec
@@ -336,7 +336,7 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 
 要部署到 Github Pages，只需在本地运行 `mkdocs gh-deploy` 命令即可自动将生成的静态网站部署到你的 GitHub 仓库的 `gh-pages` 分支，并通过 GitHub Pages 服务进行托管。
 
-由于篇幅限制，GitHub账号注册以及如何流畅访问不在本文探讨范围内。
+由于篇幅限制，GitHub账号注册不在本文探讨范围内。
 
 #### 4.2.1 创建 GitHub仓库
 
@@ -376,6 +376,10 @@ mkdocs gh-deploy
 #### 4.2.4 自定义域名
 
 如需自定义域名，可在`docs`目录下添加 `CNAME` 文件并填写入域名，并在 GitHub Pages 设置中填写你的域名。
+
+并在域名的dns解析界面中，创建对应的域名解析。
+
+详细操作参考这篇[GitHub文档](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)。
 
 #### 4.2.5 通过 GitHub Action 实现自动部署
 
@@ -421,7 +425,6 @@ jobs:
 
 完成了上述配置之后，就可以开始撰写文章了。
 
-在MkDocs中，所有文章均以MarkDown 格式存储在`docs`文件夹下。
+在MkDocs中，所有文章均以MarkDown格式存储在`docs`文件夹下。
 
-在完成了文章编辑后，不要忘记在`mkdocs.yml`中nav处添加文章（如果启用的话）。
-
+在完成了文章编辑后，不要忘记在`mkdocs.yml`中nav处添加文章（如果启用目录插件）。
