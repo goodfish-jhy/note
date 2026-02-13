@@ -356,21 +356,21 @@
 
 随后在文件系统中寻找密码（此处密码较为隐蔽，建议逐个文件检查）。
 
-  [1]: ../assets/image/Other/hacknet/1788795560.png
-  [2]: ../assets/image/Other/hacknet/752336292.png
-  [3]: ../assets/image/Other/hacknet/1741333189.png
-  [4]: ../assets/image/Other/hacknet/3287174386.png
-  [5]: ../assets/image/Other/hacknet/300076928.png
-  [6]: ../assets/image/Other/hacknet/2239958701.png
-  [7]: ../assets/image/Other/hacknet/559249338.png
-  [8]: ../assets/image/Other/hacknet/1336430594.png
-  [9]: ../assets/image/Other/hacknet/1015823523.png
-  [10]: ../assets/image/Other/hacknet/3301019271.png
-  [11]: ../assets/image/Other/hacknet/753736713.png
-  [12]: ../assets/image/Other/hacknet/305624521.png
-  [13]: ../assets/image/Other/hacknet/1923805148.png
-  [14]: ../assets/image/Other/hacknet/4102686729.png
-  [15]: ../assets/image/Other/hacknet/1694085727.png
-  [16]: ../assets/image/Other/hacknet/1749498714.png
-  [17]: ../assets/image/Other/hacknet/1852902988.png
-  [18]: ../assets/image/Other/hacknet/116883178.png
+  [1]: ../assets/image/Other/hacknet/hacknet_screenshot_1.png
+  [2]: ../assets/image/Other/hacknet/hacknet_screenshot_2.png
+  [3]: ../assets/image/Other/hacknet/hacknet_screenshot_3.png
+  [4]: ../assets/image/Other/hacknet/hacknet_screenshot_4.png
+  [5]: ../assets/image/Other/hacknet/hacknet_screenshot_5.png
+  [6]: ../assets/image/Other/hacknet/hacknet_screenshot_6.png
+  [7]: ../assets/image/Other/hacknet/hacknet_screenshot_7.png
+  [8]: ../assets/image/Other/hacknet/hacknet_screenshot_8.png
+  [9]: ../assets/image/Other/hacknet/hacknet_screenshot_9.png
+  [10]: ../assets/image/Other/hacknet/hacknet_screenshot_10.png
+  [11]: ../assets/image/Other/hacknet/hacknet_screenshot_11.png
+  [12]: ../assets/image/Other/hacknet/hacknet_screenshot_12.png
+  [13]: ../assets/image/Other/hacknet/hacknet_screenshot_13.png
+  [14]: ../assets/image/Other/hacknet/hacknet_screenshot_14.png
+  [15]: ../assets/image/Other/hacknet/hacknet_screenshot_15.png
+  [16]: ../assets/image/Other/hacknet/hacknet_screenshot_16.png
+  [17]: ../assets/image/Other/hacknet/hacknet_screenshot_17.png
+  [18]: ../assets/image/Other/hacknet/hacknet_screenshot_18.png

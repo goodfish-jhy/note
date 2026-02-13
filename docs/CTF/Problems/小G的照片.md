@@ -16,7 +16,7 @@
 
 寒假时，小G决定外出游玩，途中给小A寄了几张精心挑选的照片。在这些照片中，有一张特别引起了小A的注意。照片的右下角写着三个字母：LSB。难道其中隐藏着什么秘密？小A心生疑虑，立即开始搜索相关信息，结果发现，LSB是"最低有效位"（Least Significant Bit）的缩写，这是一种常见的数字图像加密方法。
 
-![Image](../../file/SSP.png){ loading=lazy }
+![Image](../../file/xiaog_photo_lsb.png){ loading=lazy }
 
 小A又翻了翻信封，发现了一封信:
 

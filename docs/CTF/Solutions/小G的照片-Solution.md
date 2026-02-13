@@ -33,7 +33,7 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 
 果然，打开频谱图发现了一个网址
 
-![Image](../../assets/image/Solutions/小G的照片-Solution/2025_02_13_21_37.png){ loading=lazy }
+![Image](../../assets/image/Solutions/小G的照片-Solution/mp3stego_detector.png){ loading=lazy }
 
 下载下来放沙盘跑了下，发现要输入密码
 
@@ -47,7 +47,7 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 
 加载调试器后，发现调试器被Ban了
 
-![Image](../../assets/image/Solutions/小G的照片-Solution/2025_02_13_22_15.png){ loading=lazy }
+![Image](../../assets/image/Solutions/小G的照片-Solution/audio_spectrum.png){ loading=lazy }
 
 程序在正常情况下无法正常运行
 
@@ -59,7 +59,7 @@ MP3Stego的检测可以看[这篇专利](https://patentimages.storage.googleapis
 
 这个时候从工具栏可以搜索字符串`Wrong answer`
 
-![Image](../../assets/image/Solutions/小G的照片-Solution/2025_02_13_22_33.png){ loading=lazy }
+![Image](../../assets/image/Solutions/小G的照片-Solution/flag_decoding.png){ loading=lazy }
 
 双击搜索到的跳转到汇编代码
 
