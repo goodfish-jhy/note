@@ -114,6 +114,8 @@ markdown_extensions:
 
 plugins:
   - toc
+  - statistics
+  - glightbox
   - search  # 内置搜索插件
 
 #   - encryptcontent:  # 内容加密插件
