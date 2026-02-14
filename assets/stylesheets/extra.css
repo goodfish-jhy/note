@@ -33,15 +33,40 @@
   /*background-color: #efefef;*/
 }
 
+h1 {
+  counter-reset: h2;
+}
+
+h2 {
+  counter-reset: h3;
+}
+
+h3 {
+  counter-reset: h4;
+}
+
+/* h2标题：显示为 "1.1 "、"1.2 "、"2.1 " 等 */
+h2:before {
+  counter-increment: h2;
+  content: counter(h2) " ";
+}
+
+/* h3标题：显示为 "1.1.1 "、"1.1.2 " 等 */
+h3:before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3)  " ";
+}
+
+/* h4标题：显示为 "1.1.1.1 " 等 */
+h4:before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4) " ";
+}
 
 
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-typeset h4,
-.md-typeset h5,
-.md-typeset h6 {
-  font-weight: 700;
+/* 禁用所有层级的标题自动大写 */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: none !important;
 }
 
 .md-tabs__link {
